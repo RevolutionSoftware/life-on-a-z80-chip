@@ -1,6 +1,6 @@
 ;;; equates.inc - most stuff is ripped from ion.inc
 ;;
-
+.nolist
 ;----> Safe Memory Areas
 ; saferam1 = 768 bytes (apdram)
 ; saferam2 = 531 bytes (statram)
@@ -41,3 +41,4 @@ statram         = saferam2
 statvar         = saferam2
 text_mem        = saferam3
 textmem         = saferam3
+.list
