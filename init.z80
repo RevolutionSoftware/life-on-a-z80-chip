@@ -1,0 +1,21 @@
+;;;; init.z80
+
+.nolist
+#include "ti83plus.inc"
+#include "equates.inc"
+.list
+
+;;; Magic number
+
+        .org progstart-2
+
+        .db $BB, $6D
+
+main:
+
+#comment
+#include "flowers.z80"
+#include "rain.z80"
+#include "fire.z80"
+#include "heart.z80"
+#endcomment

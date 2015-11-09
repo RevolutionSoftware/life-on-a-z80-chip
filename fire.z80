@@ -1,0 +1,38 @@
+;;; ripped from https://www.omnimaga.org/ti-z80-calculator-projects/fire/msg280240/#msg280240
+;; TODO: Improve it!
+
+Fire:
+	ld hl,934Ch
+	ld de,9340h
+	ld bc,2F4h
+Random:			;feel free to give me a smaller rand routine
+	push hl		;that is pretty random x.x
+	push de
+	ld hl,0
+	ld a,r
+	ld h,a
+	add a,(hl)
+	inc hl
+	rrca
+	add a,(hl)
+	inc hl
+	rrca
+	xor (hl)
+	inc hl
+	rrca
+	rrca
+	ld l,a
+	ld (Random+3),hl
+	and 7
+	ld d,8Bh
+	ld e,a
+	ld a,(de)
+	pop de
+	pop hl
+Method:
+	or (hl)            ;change to AND for t'other method
+	ld (de),a
+	inc de
+	cpi
+	jp pe,Random
+	ret
