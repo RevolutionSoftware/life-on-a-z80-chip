@@ -5,13 +5,17 @@
 #include "equates.inc"
 .list
 
+group1		= %11111101
+diClear		= %10111111
+
 ;;; Magic number
 
         .org progstart-2
 
         .db $BB, $6D
 
-main:
+start:
+	ret
 
 #comment
 #include "flowers.z80"
